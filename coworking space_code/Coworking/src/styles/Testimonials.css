@@ -1,0 +1,129 @@
+.testimonial-section {
+  background: transparent;
+  padding: clamp(20px, 3.5vw, 34px) 0;
+  text-align: center;
+  position: relative;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+.testimonial-head {
+  margin-bottom: clamp(16px, 3vw, 28px);
+}
+
+.testimonial-heading {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 950;
+  color: var(--primary);
+  margin: 0 0 10px;
+  letter-spacing: 0.2px;
+}
+
+.testimonial-subheading {
+  margin: 0 auto;
+  max-width: 72ch;
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 1.03rem;
+}
+
+.testimonial-slider {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.testimonial-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.testimonial-card {
+  flex: 0 0 100%; 
+  max-width: 100%;
+  border-radius: var(--radius);
+  padding: clamp(18px, 3vw, 26px);
+  box-shadow: var(--shadow-sm);
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.testimonial-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 950;
+  color: var(--primary);
+  background: rgba(15, 42, 68, 0.06);
+  border: 1px solid rgba(15, 42, 68, 0.14);
+}
+
+.quote-badge {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 12px 24px rgba(245, 158, 11, 0.20);
+}
+
+.quote-icon {
+  color: #fff;
+  font-size: 20px;
+}
+
+.testimonial-text {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  font-weight: 500;
+  color: var(--text);
+  margin: 0 0 14px;
+  white-space: pre-line;
+}
+
+.author {
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--accent);
+  margin: 0;
+}
+
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1.5rem;
+}
+
+.testimonial-dots button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(15, 42, 68, 0.22);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.testimonial-dots button.active {
+  background: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .testimonial-card {
+    text-align: left;
+  }
+}

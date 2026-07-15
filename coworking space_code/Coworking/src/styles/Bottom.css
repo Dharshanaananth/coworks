@@ -1,0 +1,202 @@
+/* Section background */
+.bottom-page {
+  background: #ec8f13;
+  color: #111;
+  padding: 18px 20px 30px;
+}
+
+/* Content copy */
+.bottom-content {
+  max-width: 1080px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.bottom-content h2 {
+  font-size: clamp(22px, 3vw, 36px);
+  margin: 0 0 12px;
+  font-weight: 800;
+  color: #111;
+}
+
+.bottom-content p {
+  margin: 0 0 18px;
+  line-height: 1.65;
+  color: #191919;
+  font-size: clamp(14px, 2vw, 18px);
+}
+
+.bottom-king-emphasis {
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: #0a0a0a;
+}
+
+/* Actions row */
+.bottom-actions {
+  flex: 0 1 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  padding: 0 10px;
+  min-width: 320px;
+  margin-top: -90px;
+  margin-right: 180px;
+}
+
+/* Chat pill: white outline on orange background */
+.bottom-chat-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color .2s ease, color .2s ease, transform .15s ease;
+}
+
+/* outline button pattern */
+
+.bottom-chat-btn .bottom-chip {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: #fff;
+  color: #ec8f13;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.bottom-chat-btn:hover {
+  background: rgba(19, 2, 1, 0.12);
+  transform: translateY(-1px);
+}
+
+/* Phone pill: black background, orange phone icon */
+.bottom-phone-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  /* pill shape */
+  background: #111;
+  /* black pill */
+  color: #fff;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, .18);
+  transition: transform .15s ease, filter .2s ease;
+}
+
+.bottom-phone-btn .bottom-phone-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .08);
+  color: #ff9900;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.bottom-phone-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.02);
+}
+/* Phone Button Styling */
+.phone-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.phone-link:hover {
+  background-color: transparent; /* Darker blue */
+  transform: translateY(-2px);
+}
+
+.bottom-phone-icon i {
+  font-size: 18px;
+}
+
+
+/* Tablet and down */
+@media (max-width: 768px) {
+
+  /* Stack the row: content on top, buttons below */
+  .bottom-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  /* switch to column for small screens */
+
+  .bottom-content {
+    text-align: center;
+  }
+
+  .bottom-actions {
+    display: flex;
+    justify-content: center;
+    /* align buttons to the left under text */
+    align-items: center;
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+    /* remove custom offsets that break layout */
+  }
+
+  /* align along flex main axis without margins */
+}
+
+/* Small phones: optionally stack the pills full width */
+@media (max-width: 520px) {
+  .bottom-actions {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    /* justify-content: center; */
+    gap: 12px;
+
+  }
+
+  .bottom-chat-btn,
+  .bottom-phone-btn {
+    width: 100%;
+    justify-content: center;
+    max-width: 180px;
+    margin-left: 50px;
+
+    
+  }
+}
+@media (max-width: 330px) {
+  .bottom-actions {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-left: -30px;
+    /* justify-content: center; */
+    gap: 12px;
+
+  }
+}

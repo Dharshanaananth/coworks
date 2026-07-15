@@ -1,0 +1,145 @@
+/* ========== Overlay ========== */
+.plans-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ========== Modal (flex column so content can scroll) ========== */
+.plans-modal {
+  position: relative;
+  background: #fff;
+  border-radius: 18px;
+  width: 92%;
+  max-width: 760px;
+  max-height: 90vh;               /* clamp overall height to viewport */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;               /* clip rounded corners */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  animation: scaleUp 0.3s ease;
+  z-index: 1;
+}
+
+/* ========== Close (X) Button ========== */
+.plans-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;                    /* above carousel */
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 24px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.plans-close:hover { background: rgba(0, 0, 0, 0.7); }
+.plans-close:active { transform: scale(0.98); }
+.plans-close:focus-visible {
+  outline: 3px solid #ffb400;
+  outline-offset: 2px;
+}
+
+/* ========== Carousel (fixed height header) ========== */
+.plans-carousel {
+  position: relative;
+  width: 100%;
+  height: 280px;                  /* header height */
+  flex: 0 0 280px;                /* fixed block at top */
+  overflow: hidden;
+  border-radius: 18px 18px 0 0;
+  z-index: 0;
+}
+.plans-carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+.plans-carousel img.active { display: block; }
+
+.carousel-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+.carousel-dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.carousel-dots button.active { background: #ff9900; }
+
+/* ========== Scrollable content wrapper ========== */
+.plans-scroll {
+  flex: 1 1 auto;                 /* fill remaining space */
+  overflow-y: auto;               /* allow scrolling to the bottom */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ========== Details Section ========== */
+.plans-content {
+  padding: 20px;
+  text-align: center;
+}
+.plans-content h2 {
+  margin-bottom: 15px;
+  font-size: 24px;
+  color: #0b1b38;
+}
+.plans-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  text-align: left;
+}
+.plans-content li {
+  font-size: 16px;
+  margin: 6px 0;
+}
+
+/* Book Now Button */
+.book-btn {
+  background: #ff9900;
+  color: #fff;
+  border: none;
+  padding: 12px 26px;
+  font-size: 16px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+.book-btn:hover { background: #e58300; transform: translateY(-2px); }
+
+/* ========== Animations ========== */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes scaleUp { from { transform: scale(0.9); } to { transform: scale(1); } }
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .plans-carousel { height: 200px; flex-basis: 200px; }
+  .plans-content h2 { font-size: 20px; }
+}
+@media (max-width: 400px) {
+  .plans-close { top: 6px; right: 6px; width: 36px; height: 36px; }
+}

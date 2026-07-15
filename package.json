@@ -1,0 +1,10 @@
+{
+  "name": "coworking-space-root",
+  "private": true,
+  "scripts": {
+    "start": "npm --prefix \"./coworking space_code/Coworking\" start",
+    "build": "npm --prefix \"./coworking space_code/Coworking\" run build",
+    "test": "npm --prefix \"./coworking space_code/Coworking\" test",
+    "server": "npm --prefix \"./coworking space_code/Coworking\" run server"
+  }
+}
